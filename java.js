@@ -24,6 +24,7 @@ function AddQuest() {
            return;
 
           }
+          alertt.textContent="";
    const lista = document.createElement('li');
     theList.appendChild(lista);
    
