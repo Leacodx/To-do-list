@@ -6,7 +6,7 @@ background-attachment: fixed;
 
 
 }
-
+/* main container*/
 .project1{
 z-index: 2;
 margin: auto;
@@ -16,7 +16,7 @@ width: 630px;
 background-color: whitesmoke;
 box-shadow: 2px 2px 2px rgb(0, 0, 0);
  animation-name: movepart;
- animation-duration: 1.1s;
+ animation-duration: 0.8s;
  animation-timing-function:ease ;
 animation-fill-mode:forwards;
 box-shadow: 0 2px 0px rgb(189, 186, 186), 0 0px 17px 0 rgb(121, 120, 120) ;
@@ -24,7 +24,7 @@ box-sizing: content-box;
 
 }
 
-
+/* blinks for the alert text*/
 .Stylee{
     font-family:Arial  ;
 font-style: oblique;
@@ -33,7 +33,7 @@ animation: blinks linear 1s 2 forwards ;
 font-style:oblique;
 animation-fill-mode:both;
 
-
+/* edit on alert text*/
 }
 #showalert{
 position: relative;
@@ -47,45 +47,46 @@ margin-top: 5px;
 
 
 
-
+/* div for project 1 class*/
 .project1 div{
 background-color: rgb(246, 247, 247);
 position: relative;
 left: 25.9ch;
-animation: fade-in 1.8s alternate;
 }
 
 
 
 
-
+/* The keyframes*/
 @keyframes movepart{
     0%{ margin-top: -800px;
-        opacity: 0;
+        opacity: 0; 
+       
+        
     
        
     }
 
-     50% {margin-top: 100px;
+     50% {margin-top: 100px; ;
         
     }
 
   
 
     100% { margin-top: 0.44cm;
-    opacity: 1;
+    opacity: 1; 
     }
 
    
     }
     
  @keyframes fade-in{
-   0%{ opacity: 0}
+   0%{ opacity: 0 ;  }
     
 
-   50%{ opacity: 0;}
+   50%{ opacity: 0; }
 
-    100%{ opacity: 1}
+    100%{ opacity: 1;  }
 
 
  }
@@ -105,17 +106,20 @@ animation: fade-in 1.8s alternate;
 
 from{transform: translateY(200%); opacity: 0; }
 }
-    
+    /* completed text*/
 .Donemenu{
 box-sizing: content-box;
 left:4ch;
 position: relative;
 left: 1.8cm;
 margin-top: -1.5ch;
+animation: fade-in  1.5s forwards;
+animation-timing-function: ease-in;
+opacity: 0;
     
 }
 
-
+/* The ok button*/
 .but1{
     box-sizing:content-box;
     position: relative;
@@ -124,6 +128,10 @@ margin-top: -1.5ch;
     font-size: 16px;
     border-radius:5px;
     right: 50px;
+    animation: fade-in  1.8s forwards;
+animation-timing-function: ease-in;
+opacity: 0;
+    
  
 }
 
@@ -131,37 +139,39 @@ h1 {
 font-size:55px;
 box-sizing: border-box;
 color:black;
-animation-name: fadetext;
 margin-top:8px;
+animation: fade-in  1.2s forwards;
+animation-timing-function: ease-in;
+opacity: 0;
 
 }
- 
+ /* input edit*/
 #inputt1{
 width: 250px; 
 }
 
-
+/* button edit*/
 #BtnClick{
 width: 45px;
 font-size: 21px;
 
 
 }
-
+/* line through when the task done*/
 .Style {
 
 text-decoration: line-through;
-color: rgb(49, 49, 49);
+color: rgb(143, 142, 142);
 
 
 
 }
-
+/* hover line through */
 .listamove:hover{
     text-decoration: line-through;
     color: black 
 }
-
+/* the list for the task*/
  .listamove{
     list-style-type: none;
     font-size: 29px;
@@ -176,13 +186,13 @@ color: rgb(49, 49, 49);
     
 }
 
-
+/* main id list task for ulr*/
 #listBorn{
     list-style-type: none;
    
     
 }
- 
+ /* for the trash edit*/
 .trashme{
     list-style-type: none;
     font-size: 29px;
