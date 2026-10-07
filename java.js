@@ -6,7 +6,7 @@ const theList = document.querySelector("#listBorn");
 const input = document.querySelector("#inputt1");
 const alertt = document.querySelector("#showalert");
 const Questdone = document.querySelector("#DoneQuest");
-const NotDone = document.querySelector("#TotalToDo");
+
 let counter = 0;
 let counterUndone = 0;
 const text = input.value;
@@ -20,20 +20,22 @@ function AddQuest() {
 
 //list and how everything started, declare text and put value&& trigger for alert
  const text = input.value;
-  if(text.length === 0) { alertt.textContent = "put your quest pls";
-           return;
+  if(text.length === 0) { alertt.textContent = `Input must not be empty`; alertt.classList.remove("Stylee");setTimeout(function(){alertt.classList.add("Stylee")
+    
+  },timeout); return;
 
-          }
+          } 
+  
+          alertt.classList.remove("showalert")
           alertt.textContent="";
    const lista = document.createElement('li');
     theList.appendChild(lista);
    
      const mark = document.createElement("span");
-       mark.textContent = text;
+       mark.innerText = text;
           lista.appendChild(mark);
-
-      const trash = document.createElement("button");
-      trash.innerHTML = "&#128465;";
+      const trash = document.createElement("span");
+      trash.innerHTML = " &nbsp; &#128465;";
       trash.classList.add("trashme");
        lista.appendChild(trash);
          const objectlist = {};
@@ -41,16 +43,16 @@ function AddQuest() {
             objectlist.quest = text;
            objectlist.klar = false;
         Questlist.push(objectlist);
-       counterUndone++;
+         mark.classList.add("listamove");
+        
         //uppdate the counter
-        NotDone.textContent= `${counterUndone}  Total Quest`;
       input.value =("");
         
    //for the trash&event&click
     trash.addEventListener("click",
        function(){theList.removeChild(lista); resetcounters();
         //Uppdate for total Quest 
-       counterUndone--; NotDone.textContent= `${counterUndone}  Total Quest`; let index =  Questlist.indexOf(text); Questlist.splice(index, 1)
+         ; let index =  Questlist.indexOf(text); Questlist.splice(index, 1)
        
        }
         ) 
@@ -64,22 +66,22 @@ function AddQuest() {
        else
         {mark.classList.toggle("Style"); counter++; objectlist.klar = true; }
        
-         Questdone.textContent = `${counter}  Completed Quest`;  NotDone.textContent= `${counterUndone}  Total Quest`; 
+         Questdone.textContent = `${counter}  completed `;
     
          
          
 } ) 
       
       //reset count after trigger trashfunction for uppdate >)
-    function resetcounters(){if(mark.classList.contains("Style")){counter--; return  Questdone.textContent = `${counter}  Completed Quest`}}
+    function resetcounters(){if(mark.classList.contains("Style")){counter--; return  Questdone.textContent = `${counter}  completed `}}
 //third function to check
 
      
-       
+  function timeout(){if(alertt.classList.contains("showalert")){alertt.classList.remove("showalert")}}
         
        
     
   
     
 
-    }
+}
